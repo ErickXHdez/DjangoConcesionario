@@ -2,5 +2,5 @@ from rest_framework.pagination import PageNumberPagination
 
 
 class SmallResultsSetPagination(PageNumberPagination):
-    page_size = 5
+    page_size = 2
     page_query_param = 'page'

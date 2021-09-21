@@ -11,7 +11,6 @@ class BrandSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'total_cars',)
         read_only_fields = ('id',)
 
-    @staticmethod
     def get_total_cars(self, obj):
         return obj.cars.count()
 
@@ -19,8 +18,8 @@ class BrandSerializer(serializers.ModelSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ('id', 'model', 'brand', 'manufacturing_data', )
-        read_only_fields = ('id', )
+        fields = ('id', 'model', 'brand', 'manufacturing_data',)
+        read_only_fields = ('id',)
         extra_kwargs = {
             'manufacturing_data': {'write_only': True}
         }
